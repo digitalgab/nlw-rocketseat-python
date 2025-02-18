@@ -1,4 +1,5 @@
 from flask import Flask
-from flask_cors import CORS
+from src.main.routes.event import event_route
 
 app = Flask(__name__)
+app.register_blueprint(event_route)
