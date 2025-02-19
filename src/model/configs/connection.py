@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
 class DBConnection:
     def __init__(self):
         self._connection_string = connection_string
