@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from src.model.configs.base import Base
+from src.model.entities.events import Events
 
 class Subscribers(Base):
     __tablename__ = "subscribers"
