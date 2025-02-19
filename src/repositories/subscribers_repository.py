@@ -1,7 +1,8 @@
 from src.model.configs.connection import DBConnection
 from src.model.entities.Subscribers import Subscribers
+from src.interfaces.subscribers_repository import SubscribersRepositoryInterface
 
-class SubscribersRepository:
+class SubscribersRepository(SubscribersRepositoryInterface):
     def list(self) -> [Subscribers]:
         with DBConnection() as db:
             return db.session.query(Subscribers).all()

@@ -1,7 +1,8 @@
 from src.model.configs.connection import DBConnection
 from src.model.entities.events import Events
+from src.interfaces.events_repository import EventsRepositoryInterface
 
-class EventsRepository:
+class EventsRepository(EventsRepositoryInterface):
     def list(self) -> [Events]:
         with DBConnection() as db:
             return db.session.query(Events).all()
