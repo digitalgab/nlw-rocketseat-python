@@ -1,18 +1,13 @@
 from abc import ABC, abstractmethod
+
 from src.model.entities.subscribers import Subscribers
 
 class SubscribersRepositoryInterface(ABC):
     @abstractmethod
-    def list(self) -> [Subscribers]:
-        raise NotImplementedError
-    def show(self, email: str, event_id: int) -> Subscribers:
-        raise NotImplementedError
+    def create(self, subscriber_data:dict) -> None: pass
+    @abstractmethod  
+    def show(self, email:str, event_id: int) -> Subscribers: pass
     @abstractmethod
-    def create(self, subscriber: dict) -> None:
-        raise NotImplementedError
+    def list(self,link:str, event_id:int) -> list:pass
     @abstractmethod
-    def update(self, subscriber: Subscribers) -> Subscribers:
-        raise NotImplementedError
-    @abstractmethod
-    def delete(self, subscriber: Subscribers) -> Subscribers:
-        raise NotImplementedError
+    def show_ranking(self, event_id: int) -> list: pass
